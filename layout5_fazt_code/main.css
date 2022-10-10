@@ -1,0 +1,192 @@
+:root {
+  --color-first: #1c262d;
+  --color-second: #7f8e9d;
+  --color-third: #475360;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  /* Background pattern sacado de: https://freefrontend.com/css-background-patterns/ */
+  background: radial-gradient(black 3px, transparent 4px),
+    radial-gradient(black 3px, transparent 4px),
+    linear-gradient(#fff 4px, transparent 0),
+    linear-gradient(
+      45deg,
+      transparent 74px,
+      transparent 75px,
+      #a4a4a4 75px,
+      #a4a4a4 76px,
+      transparent 77px,
+      transparent 109px
+    ),
+    linear-gradient(
+      -45deg,
+      transparent 75px,
+      transparent 76px,
+      #a4a4a4 76px,
+      #a4a4a4 77px,
+      transparent 78px,
+      transparent 109px
+    ),
+    #fff;
+  background-size: 109px 109px, 109px 109px, 100% 6px, 109px 109px, 109px 109px;
+  background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+  font-family: 'Roboto Condensed', sans-serif;
+}
+
+.header {
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.grid-container {
+  margin: 2rem auto;
+  width: 90%;
+  /* min-width: 320px; */
+  max-width: 1000px;
+  min-height: 100vh;
+  display: grid;
+  color: #fff;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  grid-template-areas:
+    "nav"
+    "main"
+    "sidebar"
+    "article1"
+    "article2"
+    "article3"
+    "article4"
+    "article5"
+    "footer";
+  background-color: #fff;
+}
+
+.grid-container > * {
+  border: solid 1px #1c262d;
+  border-radius: 0.5rem;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  grid-area: nav;
+  background-color: var(--color-first);
+}
+
+.main {
+  padding: 2rem;
+  grid-area: main;
+}
+
+.main > section {
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background-color: var(--color-second);
+  border-radius: 0.5rem;
+}
+
+.sidebar {
+  padding: 2rem;
+  grid-area: sidebar;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  background-color: var(--color-third);
+}
+
+.sidebar img {
+  width: 100%;
+}
+
+.article {
+  height: 150px;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--color-first);
+}
+
+.article:hover {
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  transition: all .5s ease;
+}
+
+.article1 {
+  grid-area: article1;
+}
+
+.article2 {
+  grid-area: article2;
+}
+
+.article3 {
+  grid-area: article3;
+}
+
+.article4 {
+  grid-area: article4;
+}
+
+.article5 {
+  grid-area: article5;
+}
+
+.footer {
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-area: footer;
+  background-color: var(--color-first);
+}
+
+@media (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "nav nav"
+      "main main"
+      "sidebar sidebar"
+      "article1 article1"
+      "article2 article3"
+      "article4 article5"
+      "footer footer";
+  }
+
+  .sidebar {
+    flex-direction: row;
+  }
+}
+
+@media (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+      "nav nav nav nav nav"
+      "main main main sidebar sidebar"
+      "article1 article2 article3 article4 article5"
+      "footer footer footer footer footer";
+  }
+
+  .sidebar {
+    flex-direction: column;
+  }
+}
