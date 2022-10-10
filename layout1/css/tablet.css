@@ -1,0 +1,21 @@
+.main {
+  /* Si uso grid areas no es necesario establecer grid-template-columns ni grid-template-rows */
+  /* grid-template-columns: repeat(2, 1fr); */
+
+  /* Ya no necesitamos darle un size a las rows ya que en el main.css tienen grid-auto-rows: 10rem; como valor */
+  /* grid-template-rows: repeat(7, 10rem); */ 
+
+  grid-template-areas:
+    "c1 c1"
+    "c2 c3"
+    "c4 c4"
+    "c4 c4"
+    "c4 c4"
+    "c5 c5"
+    "c6 c6";
+}
+
+/* Aquí se puede definir la altura para cada este div, pero ya le dimos 3 rows al c4 (cada una de 10rem) */
+/* .c4 {
+  height: 30rem;
+} */

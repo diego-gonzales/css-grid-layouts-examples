@@ -1,0 +1,8 @@
+.main {
+  grid-template-areas:
+    "c1 c2 c2 c2"
+    "c1 c3 c3 c3"
+    "c4 c4 c4 c4"
+    "c4 c4 c4 c4"
+    "c4 c4 c4 c4";
+}

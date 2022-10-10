@@ -1,0 +1,62 @@
+:root {
+  --color-c1: #c82928;
+  --color-c2: #de6062;
+  --color-c3: #e6b443;
+  --color-c4: #9fdb31;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+.main {
+  margin: 0 auto;
+  padding: 2rem;
+  width: 100%;
+  min-width: 320px;
+  max-width: 1300px;
+  min-height: 100vh;
+  display: grid;
+  /* grid-auto-rows: 1fr; /* Si no lo coloco funciona igual, creo que css lo pone como auto */
+  grid-template-areas:
+    "c1"
+    "c2"
+    "c3"
+    "c4";
+  gap: 2rem;
+}
+
+.c {
+  width: 100%;
+  border-radius: 1rem;
+}
+
+.c1 {
+  grid-area: c1;
+  background-color: var(--color-c1);
+}
+
+.c2 {
+  grid-area: c2;
+  background-color: var(--color-c2);
+}
+
+.c3 {
+  grid-area: c3;
+  background-color: var(--color-c3);
+}
+
+.c4 {
+  grid-area: c4;
+  background-color: var(--color-c4);
+}

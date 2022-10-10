@@ -1,0 +1,8 @@
+.main {
+  grid-template-columns: 10rem 1fr;
+  grid-template-rows: 10rem 15rem 1fr;
+  grid-template-areas:
+    "c1 c2"
+    "c3 c3"
+    "c4 c4";
+}
